@@ -249,138 +249,47 @@
       <div class="c-body">
         <main class="c-main">
           <div class="container-fluid">
-            <div class="modal fade" id="dangerModal" tabindex="-1" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
-              <div class="modal-dialog modal-danger" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h4 class="modal-title">Delete products</h4>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                  </div>
-                  <div class="modal-body">
-                    <p>Delete selected products from database?</p>
-                  </div>
-                  <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <button class="btn btn-danger" type="button" data-dismiss="modal" onclick="deleteSelectedProducts()">Delete</button>
-                  </div>
-                </div>
-
-              </div>
-
-            </div>
             <div class="fade-in">
-              <div class="col-lg-12">
-                <div class="contentbar">
-                  <div class="row">
-                    <div class="form-group col-sm-2">
-                      <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filter categories</button>
-                      <div class="dropdown-menu" id="catDropdown" aria-labelledby="Filter categories" style="margin: 0px;">
-
-                      </div>
-                    </div>
-                    <div class="form-group col-sm-3">
-                      <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButtonSubCat" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filter sub-categories</button>
-                      <div class="dropdown-menu" id="subCatDropdown" aria-labelledby="Filter sub-categories" style="margin: 0px;">
-                      </div>
-                    </div>
-                    <div class="form-group col-sm-4">
-
-                    </div>
-
-
-                    <div class="form-group col-sm-2">
-                      <div class="button-group"></div>
-                      <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" id="collectionDropdown" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span> Add to collection<span class="caret"></span></button>
-                      <ul class="dropdown-menu" id="collectionDropdownItems">
-                      </ul>
-                    </div>
-
-                    <div class="form-group col-sm-1">
-                      <button class="btn btn-outline-danger" type="button" data-toggle="modal" data-target="#dangerModal"><i class="fa fa-trash"></i></button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Start row -->
               <div class="row">
-                <!-- Start col -->
-                <div class="col-lg-12">
-                  <div class="card m-b-30">
-
-                    <div class="card-body">
-                      <div class="table-responsive">
-                        <div class="row">
-
-                          <!--
-                            <div class="form-group col-sm-4">
-                              <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButtonOrder" type="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Order</button>
-                              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="margin: 0px;">
-                                <a class="dropdown-item" id="orderDropdown1" onclick="isDescendingSetter(false,'dropdownMenuButtonOrder','Name Ascending')">Name Ascending</a>
-                                <a class="dropdown-item" id="orderDropdown2" onclick="isDescendingSetter(true,'dropdownMenuButtonOrder','Name Descending')">Name Descending</a>
-                                <a class="dropdown-item" id="orderDropdown3" onclick="isDescendingSetter(true,'dropdownMenuButtonOrder','Price Descending')">Price Descending</a>
-                                <a class="dropdown-item" id="orderDropdown3" onclick="isDescendingSetter(false,'dropdownMenuButtonOrder','Price Ascending')">Price Ascending</a>
-                              </div>
-                            </div>-->
-                        </div>
-                        <table class="table table-borderless">
-
-
-                          <thead>
-                            <tr>
-                              <th></th>
-                              <th>Photo</th>
-                              <th>Name</th>
-                              <th>Price</th>
-                              <th>Category</th>
-                              <th>Subcategory</th>
-                              <th>Sizes</th>
-                              <th>
-                                <!--<button class="btn btn-outline-danger" type="button" data-toggle="modal"
-                          data-target="#dangerModal"><i class="fa fa-trash"></i></button>-->
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody id="elementsListID">
-
-
-                          </tbody>
-
-                        </table>
-                        <nav aria-label="..." style="display: inline-block;">
-                          <ul class="pagination" id="paginationBar">
-
-                          </ul>
-                        </nav>
-                        <div class="btn-group">
-                          <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButtonPagination" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">20</button>
-                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonPagination"><a class="dropdown-item" onclick="changePaginationCount(10)">10</a><a class="dropdown-item" href="#" onclick="changePaginationCount(20)">20</a><a class="dropdown-item" href="#" onclick="changePaginationCount(50)">50</a><a class="dropdown-item" href="#" onclick="changePaginationCount(100)">100</a></div>
-                        </div>
+                <div class="card col-md-6">
+                  <div class="card-header"> Send notifications
+                    <div class="card-header-actions"></div>
+                  </div>
+                  <div class="card-body">
+                    <div class="form-group row">
+                      <label class="col-md-4 col-form-label" for="text-input">Notification title</label>
+                      <div class="col-md-8">
+                        <input class="form-control" id="text-input" type="text" name="text-input" placeholder="Text">
                       </div>
                     </div>
                   </div>
+                  <div class="card-body">
+                    <div class="form-group row">
+                      <label class="col-md-4 col-form-label" for="textarea-input">Notification text</label>
+                      <div class="col-md-8">
+                        <textarea class="form-control" id="textarea-input" name="textarea-input" rows="6" placeholder="Content.."></textarea>
+                      </div>
+                    </div>
+                  </div>
+
+                  <button class="btn btn-block btn-primary" type="button" onclick="publish()">Publish</button>
+                  <br>
                 </div>
-                <!-- End col -->
+                <div class="card col-md-6">
+                  <img src="assets/img/notification.png" alt="QAFT">
+                </div>
               </div>
-              <!-- End row -->
+
+              <!-- /.row-->
             </div>
-
-            <!-- /.col-->
           </div>
-          <!-- /.row-->
-
         </main>
+        <footer class="c-footer">
+          <div><a href="https://coreui.io">QAFT</a> © 2021</div>
+          <div class="ml-auto">Powered by&nbsp;<a href="https://qaft.uk/">QAFT</a></div>
+        </footer>
       </div>
-
-
-
-      <footer class="c-footer">
-        <div><a href="https://qaft.uk">QAFT</a> © 2021</div>
-        <div class="ml-auto">Powered by&nbsp;<a href="https://qaft.uk/">QAFT</a></div>
-      </footer>
     </div>
-
-
     <!-- CoreUI and necessary plugins-->
     <script src="vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
     <!--[if IE]><!-->
@@ -396,17 +305,6 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-firestore.js"></script>
 
     <script>
-      var paginationCurrent = 1;
-      var onePageItemCount = 20;
-      var category_tree;
-      var isDescending = false;
-
-      var products = [];
-      var collections = [];
-
-      var onDeleteProductIDs = [];
-
-      document.getElementById('userImageID').src = sessionStorage.getItem('userImageUrl');
       var firebaseConfig = {
         apiKey: "AIzaSyCpOsOj0vBMsT7hCvb8f9sEW_3jxDp_jOg",
         authDomain: "qaft-c9c5e.firebaseapp.com",
@@ -424,15 +322,14 @@
       const db = firebase.firestore()
       const auth = firebase.auth()
 
+
       function pageOnCreate() {
 
         if (!auth.currentUser) {
-          console.log(auth.currentUser)
           //window.location.replace('login.html')
         }
 
         auth.onAuthStateChanged(function(user) {
-          console.log(user)
           if (user) {
 
           } else {
@@ -440,312 +337,12 @@
           }
         });
 
-
-
-        db.collection('qaft').doc(sessionStorage.getItem('storeId')).collection('common').doc('category_tree').get().then((catTree) => {
-          category_tree = catTree.data();
-          //console.log(category_tree)
-          createCatDropdown()
-          createSubCatDropdown()
-        })
-
-        db.collection('qaft').doc(sessionStorage.getItem('storeId')).collection('collections').get().then((cllctns) => {
-
-
-          var inToHtml = `<li><a class="small" data-value="option1"
-                        style="display: block;padding: 3px 20px;clear: both;font-weight: 700;line-height: 1.42857143;color: #000;white-space: nowrap;background-color:#c3c3c3;"
-                        tabIndex="-1"><input type="checkbox" id="bestSelling_checkbox" />&nbsp;Best Selling</a></li>`
-
-
-          cllctns.docs.forEach((a) => {
-
-            collections.push(a.id);
-            inToHtml = inToHtml + `<li><a class="small" data-value="option1"
-                        style="display: block;padding: 3px 20px;clear: both;font-weight: 400;line-height: 1.42857143;color: #000000;white-space: nowrap;"
-                        tabIndex="-1"><input type="checkbox" id="checkbox_${a.id}" />&nbsp;${a.data().name}</a></li>`
-          })
-          inToHtm = inToHtml + `<button class="btn btn-block btn-primary" type="button" onclick="saveToCollections()">Add to collection</button>`
-
-
-          document.getElementById('collectionDropdownItems').innerHTML = inToHtm
-
-        })
-
-
-
-
-        //db.collection('qaft').doc(sessionStorage.getItem('storeId')).collection('products').orderBy('name').get().then((all) => {
-        //
-        //  for (i = 0; i < all.docs.length; i++) {
-        //    var tmpJs = all.docs[i].data()
-        //    tmpJs.id = all.docs[i].id
-        //    products.push(tmpJs);
-        //  }
-        //
-        //  createPaginationBar(products.length);
-        //  loadProducts(paginationCurrent);
-        //})
-
-        getProductsFromFB(null, 'name', false, false)
-
-
       }
 
+      function publish() {
+        document.getElementById('text-input').value = '';
+        document.getElementById('textarea-input').value = '';
 
-      function showAndHideEmulator() {
-        if (document.getElementById('mydiv').style.display === "none") {
-          document.getElementById('mydiv').style.top = "160px";
-          document.getElementById('mydiv').style.left = "300px";
-          document.getElementById('mydiv').style.display = "block"
-        } else {
-          document.getElementById('mydiv').style.display = "none"
-        }
-
-      }
-
-      function emulatorRefreshButton() {
-        alert('emulatorRefreshButton')
-      }
-
-      function getProductsFromFB(catSubCatKey, orderByKey, isDesc, isSubcat) {
-
-
-        if (catSubCatKey == null) {
-          if (isDesc) {
-            db.collection('qaft').doc(sessionStorage.getItem('storeId')).collection('products').orderBy(orderByKey, 'desc').get().then((all) => {
-
-              products = []
-              for (i = 0; i < all.docs.length; i++) {
-                var tmpJs = all.docs[i].data()
-                tmpJs.id = all.docs[i].id
-                products.push(tmpJs);
-              }
-
-              createPaginationBar(products.length);
-              loadProducts(paginationCurrent);
-            })
-          } else {
-            db.collection('qaft').doc(sessionStorage.getItem('storeId')).collection('products').orderBy(orderByKey).get().then((all) => {
-
-              products = []
-              for (i = 0; i < all.docs.length; i++) {
-                var tmpJs = all.docs[i].data()
-                tmpJs.id = all.docs[i].id
-                products.push(tmpJs);
-              }
-
-              createPaginationBar(products.length);
-              loadProducts(paginationCurrent);
-            })
-          }
-
-        } else {
-
-          if (isDesc) {
-            if (isSubcat) {
-              db.collection('qaft').doc(sessionStorage.getItem('storeId')).collection('products').where('sub_category', "==", catSubCatKey).orderBy(orderByKey, 'desc').get().then((all) => {
-
-                products = []
-                for (i = 0; i < all.docs.length; i++) {
-                  var tmpJs = all.docs[i].data()
-                  tmpJs.id = all.docs[i].id
-                  products.push(tmpJs);
-                }
-
-                createPaginationBar(products.length);
-                loadProducts(paginationCurrent);
-              })
-            } else {
-              db.collection('qaft').doc(sessionStorage.getItem('storeId')).collection('products').where('category', "==", catSubCatKey).orderBy(orderByKey, 'desc').get().then((all) => {
-
-                products = []
-                for (i = 0; i < all.docs.length; i++) {
-                  var tmpJs = all.docs[i].data()
-                  tmpJs.id = all.docs[i].id
-                  products.push(tmpJs);
-                }
-
-                createPaginationBar(products.length);
-                loadProducts(paginationCurrent);
-              })
-            }
-          } else {
-            if (isSubcat) {
-              db.collection('qaft').doc(sessionStorage.getItem('storeId')).collection('products').where('sub_category', "==", catSubCatKey).orderBy(orderByKey).get().then((all) => {
-
-                products = []
-                for (i = 0; i < all.docs.length; i++) {
-                  var tmpJs = all.docs[i].data()
-                  tmpJs.id = all.docs[i].id
-                  products.push(tmpJs);
-                }
-
-                createPaginationBar(products.length);
-                loadProducts(paginationCurrent);
-              })
-            } else {
-              db.collection('qaft').doc(sessionStorage.getItem('storeId')).collection('products').where('category', "==", catSubCatKey).orderBy(orderByKey).get().then((all) => {
-
-                products = []
-                for (i = 0; i < all.docs.length; i++) {
-                  var tmpJs = all.docs[i].data()
-                  tmpJs.id = all.docs[i].id
-                  products.push(tmpJs);
-                }
-
-                createPaginationBar(products.length);
-                loadProducts(paginationCurrent);
-              })
-            }
-          }
-        }
-      }
-
-      function isDescendingSetter(isDscndng, s1, s2) {
-        document.getElementById(s1).innerHTML = s2
-        isDescending = isDscndng
-      }
-
-
-      function createCatDropdown() {
-        //catDropdown
-
-        var inHtmlStr = `<a class="dropdown-item" onclick="getProductsFromFB(null,'name',${isDescending},false);document.getElementById('dropdownMenuButton').innerHTML='All'">All</a>`;
-
-        Object.keys(category_tree).forEach((a) => {
-          inHtmlStr = inHtmlStr + `<a class="dropdown-item" onclick="getProductsFromFB('${a}','name',${isDescending},false);createSubCatDropdown('${a}');document.getElementById('dropdownMenuButton').innerHTML='${a}'">${a}</a>`
-        })
-
-        document.getElementById('catDropdown').innerHTML = inHtmlStr
-
-
-      }
-
-      function createSubCatDropdown(cat) {
-        var inHtmlStr = '';
-
-        category_tree[cat].forEach((a) => {
-          inHtmlStr = inHtmlStr + `<a class="dropdown-item" onclick="getProductsFromFB('${a}','name',${isDescending},true);document.getElementById('dropdownMenuButtonSubCat').innerHTML='${a}'">${a}</a>`
-        })
-        document.getElementById('subCatDropdown').innerHTML = inHtmlStr
-
-
-      }
-
-
-
-
-      function createPaginationBar(lngth) {
-
-        var allPaginationBar = `<li class="page-item disabled">
-                                <span class="page-link">Previous</span>
-                              </li>`;
-        for (i = 1; i <= lngth / onePageItemCount + 1; i++) {
-          allPaginationBar = allPaginationBar + `<li class="page-item"><a class="page-link" href="#" onclick="loadProducts(${i})">${i}</a></li>`
-        }
-        allPaginationBar = allPaginationBar + `
-                              <li class="page-item">
-                                <a class="page-link" href="#">Next</a>
-                              </li>`;
-        document.getElementById('paginationBar').innerHTML = allPaginationBar;
-      }
-
-      function loadProducts(page) {
-
-        elmntlst = document.getElementById('elementsListID')
-
-        var all_items = '';
-
-        for (i = page * onePageItemCount - onePageItemCount; i < page * onePageItemCount; i++) {
-          if (i >= products.length) {
-            break;
-          }
-          name = products[i].name
-          img = products[i].imageUrls[0];
-          price = products[i].price
-          category = products[i].category
-          subcategory = products[i].sub_category;
-          old_price = products[i].old_price;
-          if (old_price === 0) {
-            old_price = '';
-          } else {
-            old_price = '$' + old_price;
-          }
-          sizesTmp = products[i].sizes;
-          available_sizes = products[i].available_sizes;
-          var sizes = [];
-          if (sizesTmp.length != 1) {
-            sizesTmp.forEach(element => {
-              if (available_sizes.includes(element)) {
-                sizes.push('<span class="badge badge-secondary-inverse" style="color:Black;background-color:#EBEDEF">' + element + '</span>')
-              } else {
-                sizes.push('<span class="badge badge-secondary-inverse" style="color:DarkGrey">' + element + '</span>')
-              }
-            });
-          }
-
-          var item = `<tr>
-          <th scope="row"><input class="form-check-input" type="checkbox" value="" onclick="checkboxChecked('${products[i].id}','flexCheckChecked_${i}')" id="flexCheckChecked_${i}" style="margin-left:0;margin-top:15px"></th>
-          <td><img src="${img}" class="img-fluid" width="35" alt="product"></td>
-          <td>${name}</td>
-          <td>$${price} <strike>${old_price}</strike></td>
-          <td>${category}</td>
-          <td>${subcategory}</td>
-          <td>${sizes}</td>
-          <td>
-              <div class="button-list">
-                <button class="btn btn-outline-success " onclick="editButton('${i}')" type="button"><i class="fa fa-pencil-square-o"></i></button>  
-              </div>
-          </td>
-        </tr>`;
-
-          all_items = all_items + item;
-
-        }
-        elmntlst.innerHTML = all_items;
-
-      }
-
-      function changePaginationCount(cnt) {
-
-        paginationCurrent = 1;
-        onePageItemCount = cnt;
-
-        createPaginationBar(products.length);
-
-        loadProducts(paginationCurrent);
-
-        document.getElementById('dropdownMenuButtonPagination').innerHTML = cnt;
-
-      }
-
-      function checkboxChecked(productId, checkBoxID) {
-        //console.log(document.getElementById(checkBoxID).checked)
-
-        if (document.getElementById(checkBoxID).checked) {
-          onDeleteProductIDs.push(productId)
-        } else if (!document.getElementById(checkBoxID).checked) {
-          for (i in onDeleteProductIDs) {
-            if (onDeleteProductIDs[i] == productId) {
-              onDeleteProductIDs.splice(i, 1)
-            }
-          }
-        }
-      }
-
-      function deleteSelectedProducts() {
-        for (i in onDeleteProductIDs) {
-          db.collection('qaft').doc(sessionStorage.getItem('storeId')).collection('products').doc(onDeleteProductIDs[i]).delete()
-
-          for (j in products) {
-            if (products[j].id === onDeleteProductIDs[i]) {
-              products.splice(j, 1)
-            }
-          }
-        }
-
-        createPaginationBar(products.length);
-        loadProducts(paginationCurrent);
       }
 
       function logout() {
@@ -757,63 +354,7 @@
         });
 
       }
-
-      function saveToCollections() {
-
-        var addToThisCollections = []
-        var addToThisBestSelling = []
-
-        if (document.getElementById('bestSelling_checkbox').checked) {
-          db.collection('qaft').doc(sessionStorage.getItem('storeId')).collection('common').doc('home_screen').get().then((k) => {
-            addToThisBestSelling = k.data().bestSellers
-            onDeleteProductIDs.forEach((prid) => {
-
-              addToThisBestSelling.push(db.collection('qaft').doc(sessionStorage.getItem('storeId')).collection('products').doc(prid))
-            })
-            db.collection('qaft').doc(sessionStorage.getItem('storeId')).collection('common').doc('home_screen').set({
-              bestSellers: addToThisBestSelling
-            }, {
-              merge: true
-            })
-          });
-        }
-
-        collections.forEach((a) => {
-          if (document.getElementById('checkbox_' + a).checked) {
-            addToThisCollections.push(a)
-          }
-        })
-
-
-        addToThisCollections.forEach((cllctn) => {
-
-          var addThisReferences = []
-
-          onDeleteProductIDs.forEach((prid) => {
-            addThisReferences.push(db.collection('qaft').doc(sessionStorage.getItem('storeId')).collection('products').doc(prid))
-          })
-
-
-          db.collection('qaft').doc(sessionStorage.getItem('storeId')).collection('collections').doc(cllctn).set({
-            products: addThisReferences
-          }, {
-            merge: true
-          }).then((catTree) => {
-            console.log(catTree);
-          });
-        })
-
-        pageOnCreate() ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-      }
-
-      function editButton(data) {
-        window.sessionStorage.setItem('editDataTemp', JSON.stringify(products[data]))
-        console.log(JSON.parse(window.sessionStorage.getItem('editDataTemp')))
-        window.location.replace('product.html')
-      }
     </script>
-
     <script>
       //Make the DIV element draggagle:
       dragElement(document.getElementById("mydiv"));
@@ -1008,7 +549,6 @@
         }
       }
     </script>
-
 
 
   </body>

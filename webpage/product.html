@@ -249,138 +249,180 @@
       <div class="c-body">
         <main class="c-main">
           <div class="container-fluid">
-            <div class="modal fade" id="dangerModal" tabindex="-1" aria-labelledby="myModalLabel" style="display: none;" aria-hidden="true">
-              <div class="modal-dialog modal-danger" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h4 class="modal-title">Delete products</h4>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-                  </div>
-                  <div class="modal-body">
-                    <p>Delete selected products from database?</p>
-                  </div>
-                  <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <button class="btn btn-danger" type="button" data-dismiss="modal" onclick="deleteSelectedProducts()">Delete</button>
-                  </div>
-                </div>
-
-              </div>
-
-            </div>
             <div class="fade-in">
-              <div class="col-lg-12">
-                <div class="contentbar">
-                  <div class="row">
-                    <div class="form-group col-sm-2">
-                      <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filter categories</button>
-                      <div class="dropdown-menu" id="catDropdown" aria-labelledby="Filter categories" style="margin: 0px;">
-
-                      </div>
-                    </div>
-                    <div class="form-group col-sm-3">
-                      <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButtonSubCat" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Filter sub-categories</button>
-                      <div class="dropdown-menu" id="subCatDropdown" aria-labelledby="Filter sub-categories" style="margin: 0px;">
-                      </div>
-                    </div>
-                    <div class="form-group col-sm-4">
-
-                    </div>
 
 
-                    <div class="form-group col-sm-2">
-                      <div class="button-group"></div>
-                      <button type="button" class="btn btn-secondary btn-sm dropdown-toggle" id="collectionDropdown" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span> Add to collection<span class="caret"></span></button>
-                      <ul class="dropdown-menu" id="collectionDropdownItems">
-                      </ul>
-                    </div>
-
-                    <div class="form-group col-sm-1">
-                      <button class="btn btn-outline-danger" type="button" data-toggle="modal" data-target="#dangerModal"><i class="fa fa-trash"></i></button>
-                    </div>
-                  </div>
-                </div>
-              </div>
               <!-- Start row -->
               <div class="row">
                 <!-- Start col -->
-                <div class="col-lg-12">
+                <div class="col-lg-8 col-xl-9">
                   <div class="card m-b-30">
+                    <div class="card-header">
+                      <h5 class="card-title">Product Detail</h5>
+                    </div>
 
                     <div class="card-body">
-                      <div class="table-responsive">
-                        <div class="row">
-
-                          <!--
-                            <div class="form-group col-sm-4">
-                              <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButtonOrder" type="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Order</button>
-                              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="margin: 0px;">
-                                <a class="dropdown-item" id="orderDropdown1" onclick="isDescendingSetter(false,'dropdownMenuButtonOrder','Name Ascending')">Name Ascending</a>
-                                <a class="dropdown-item" id="orderDropdown2" onclick="isDescendingSetter(true,'dropdownMenuButtonOrder','Name Descending')">Name Descending</a>
-                                <a class="dropdown-item" id="orderDropdown3" onclick="isDescendingSetter(true,'dropdownMenuButtonOrder','Price Descending')">Price Descending</a>
-                                <a class="dropdown-item" id="orderDropdown3" onclick="isDescendingSetter(false,'dropdownMenuButtonOrder','Price Ascending')">Price Ascending</a>
-                              </div>
-                            </div>-->
+                      <form>
+                        <div class="form-group row">
+                          <label for="productTitle" class="col-sm-12 col-form-label">Product Name</label>
+                          <div class="col-sm-12">
+                            <input type="text" class="form-control font-20" id="productTitle" placeholder="Name">
+                          </div>
                         </div>
-                        <table class="table table-borderless">
+                        <div class="form-group row">
+                          <label class="col-sm-12 col-form-label">Description</label>
+                          <div class="col-sm-12">
+                            <textarea class="form-control" id="textarea-input" name="textarea-input" rows="5" placeholder="Description.."></textarea>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="productTitleOUrl" class="col-sm-12 col-form-label">Original url</label>
+                          <div class="col-sm-12">
+                            <input type="text" class="form-control font-20" id="productTitleOUrl" placeholder="Url">
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
 
+                  <div class="row">
 
-                          <thead>
-                            <tr>
-                              <th></th>
-                              <th>Photo</th>
-                              <th>Name</th>
-                              <th>Price</th>
-                              <th>Category</th>
-                              <th>Subcategory</th>
-                              <th>Sizes</th>
-                              <th>
-                                <!--<button class="btn btn-outline-danger" type="button" data-toggle="modal"
-                          data-target="#dangerModal"><i class="fa fa-trash"></i></button>-->
-                              </th>
-                            </tr>
-                          </thead>
-                          <tbody id="elementsListID">
+                    <div class="col-lg-12 col-xl-12">
+                      <div class="card m-b-30">
+                        <div class="card-header">
+                          <h5 class="card-title">Product Images</h5>
+                        </div>
+                        <div class="card-body">
+                          <div class="row">
 
+                            <div class="card-body col-lg-6 col-xl-6">
+                              <br>
+                              <input class="form-control" id="imageUrlTextBox" type="text" placeholder="Enter image url">
+                              <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+                                <br>
+                                <button class="btn btn-block btn-secondary" type="button" onclick="addImage()">Add
+                                  Image</button>
+                                <button class="btn btn-block btn-secondary" type="button">Delete
+                                  Image</button>
+                              </div>
 
-                          </tbody>
+                            </div>
+                            <div class="carousel slide col-lg-6 col-xl-6" id="carouselExampleIndicators" data-ride="carousel">
+                              <ol class="carousel-indicators" id="imageSliderId">
 
-                        </table>
-                        <nav aria-label="..." style="display: inline-block;">
-                          <ul class="pagination" id="paginationBar">
+                              </ol>
+                              <div class="carousel-inner" id="imageSliderId_2" style="height: 100;">
 
-                          </ul>
-                        </nav>
-                        <div class="btn-group">
-                          <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButtonPagination" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">20</button>
-                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonPagination"><a class="dropdown-item" onclick="changePaginationCount(10)">10</a><a class="dropdown-item" href="#" onclick="changePaginationCount(20)">20</a><a class="dropdown-item" href="#" onclick="changePaginationCount(50)">50</a><a class="dropdown-item" href="#" onclick="changePaginationCount(100)">100</a></div>
+                              </div><a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev"><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="sr-only">Previous</span></a><a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next"><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="sr-only">Next</span></a>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
                 <!-- End col -->
+                <!-- Start col -->
+                <div class="col-lg-4 col-xl-3">
+
+                  <div class="card m-b-30">
+                    <div class="card-header">
+                      <button class="btn btn-block btn-primary" type="button" onclick="publish()">Publish</button>
+                    </div>
+
+                  </div>
+
+                  <div class="card m-b-30">
+                    <div class="card-header">
+                      <h5 class="card-title">Category</h5>
+                    </div>
+                    <div class="card-body pt-3">
+                      <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButtonCat" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Category</button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="margin: 0px;" id="categoryDropdown">
+
+                      </div>
+                    </div>
+
+                    <div class="card-body pt-3">
+                      <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButtonSubCat" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sub-Category</button>
+                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="margin: 0px;" id="SubCategoryDropdown">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="card m-b-30">
+                    <div class="card-header">
+                      <h5 class="card-title">Sizes</h5>
+                    </div>
+                    <div class="card-body">
+                      <div class="product-tags">
+                        <div class="badge-list" id="sizeList">
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div>
+                        <h6 class="card-title">In-stock:</h6>
+                        <div class="card-body" id="available_sizes_selection">
+
+
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-footer">
+                      <div class="add-product-tags">
+
+                        <div class="input-group">
+                          <input type="search" class="form-control" placeholder="Add Sizes" aria-label="Search" aria-describedby="button-addonTags" id="textbox-addTags">
+                          <div class="input-group-append">
+                            <button class="input-group-text" onclick="addSizeTag()" id="button-addTags">Add</button>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card m-b-30">
+                    <div class="card-header">
+                      <h5 class="card-title">Product Image Gallery</h5>
+                    </div>
+                    <div class="card-body">
+                      <div class="form-group row">
+                        <div class="col-md-4">
+                          <h7 class="card-title" style="white-space: nowrap;">Price</h7>
+
+                        </div>
+                        <div class="col-md-8">
+                          <input class="form-control" type="text" placeholder="" id="priceTextBoxId">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-md-4">
+                          <h7 class="card-title" style="white-space: nowrap;">Old Price</h7>
+                        </div>
+                        <div class="col-md-8">
+                          <input class="form-control" type="text" placeholder="" id="oldPriceTextBoxId">
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <!-- End row -->
+                </div>
+
+                <!-- /.col-->
               </div>
-              <!-- End row -->
+              <!-- /.row-->
             </div>
-
-            <!-- /.col-->
           </div>
-          <!-- /.row-->
-
         </main>
+        <footer class="c-footer">
+          <div><a href="https://coreui.io">CoreUI</a> © 2020 creativeLabs.</div>
+          <div class="ml-auto">Powered by&nbsp;<a href="https://coreui.io/">CoreUI</a></div>
+        </footer>
       </div>
-
-
-
-      <footer class="c-footer">
-        <div><a href="https://qaft.uk">QAFT</a> © 2021</div>
-        <div class="ml-auto">Powered by&nbsp;<a href="https://qaft.uk/">QAFT</a></div>
-      </footer>
     </div>
-
-
     <!-- CoreUI and necessary plugins-->
     <script src="vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
     <!--[if IE]><!-->
@@ -396,17 +438,6 @@
     <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-firestore.js"></script>
 
     <script>
-      var paginationCurrent = 1;
-      var onePageItemCount = 20;
-      var category_tree;
-      var isDescending = false;
-
-      var products = [];
-      var collections = [];
-
-      var onDeleteProductIDs = [];
-
-      document.getElementById('userImageID').src = sessionStorage.getItem('userImageUrl');
       var firebaseConfig = {
         apiKey: "AIzaSyCpOsOj0vBMsT7hCvb8f9sEW_3jxDp_jOg",
         authDomain: "qaft-c9c5e.firebaseapp.com",
@@ -424,15 +455,33 @@
       const db = firebase.firestore()
       const auth = firebase.auth()
 
+      var paginationCurrent = 1;
+      var onePageItemCount = 20;
+
+      var products = [];
+
+      var sizes = [];
+
+      var available_sizes = [];
+
+      var images = [];
+
+
+      var category_tree;
+      var categories = [];
+      var subCategories = [];
+      var selected_category;
+      var selected_subCategory;
+      var editMode = false;
+
+
       function pageOnCreate() {
 
         if (!auth.currentUser) {
-          console.log(auth.currentUser)
           //window.location.replace('login.html')
         }
 
         auth.onAuthStateChanged(function(user) {
-          console.log(user)
           if (user) {
 
           } else {
@@ -440,312 +489,273 @@
           }
         });
 
-
-
-        db.collection('qaft').doc(sessionStorage.getItem('storeId')).collection('common').doc('category_tree').get().then((catTree) => {
-          category_tree = catTree.data();
-          //console.log(category_tree)
-          createCatDropdown()
-          createSubCatDropdown()
-        })
-
-        db.collection('qaft').doc(sessionStorage.getItem('storeId')).collection('collections').get().then((cllctns) => {
-
-
-          var inToHtml = `<li><a class="small" data-value="option1"
-                        style="display: block;padding: 3px 20px;clear: both;font-weight: 700;line-height: 1.42857143;color: #000;white-space: nowrap;background-color:#c3c3c3;"
-                        tabIndex="-1"><input type="checkbox" id="bestSelling_checkbox" />&nbsp;Best Selling</a></li>`
-
-
-          cllctns.docs.forEach((a) => {
-
-            collections.push(a.id);
-            inToHtml = inToHtml + `<li><a class="small" data-value="option1"
-                        style="display: block;padding: 3px 20px;clear: both;font-weight: 400;line-height: 1.42857143;color: #000000;white-space: nowrap;"
-                        tabIndex="-1"><input type="checkbox" id="checkbox_${a.id}" />&nbsp;${a.data().name}</a></li>`
-          })
-          inToHtm = inToHtml + `<button class="btn btn-block btn-primary" type="button" onclick="saveToCollections()">Add to collection</button>`
-
-
-          document.getElementById('collectionDropdownItems').innerHTML = inToHtm
-
-        })
+        db.collection('qaft').doc(sessionStorage.getItem('storeId')).collection('common').doc('category_tree').get().then((all) => {
+          category_tree = all.data();
+          var goInHtml = '';
+          for (i in Object.keys(all.data())) {
+            var template = `<a class="dropdown-item" onclick="setSubCats('${Object.keys(category_tree)[i]}')">${Object.keys(category_tree)[i]}</a>`;
+            goInHtml = goInHtml + template;
+          }
+          document.getElementById('categoryDropdown').innerHTML = goInHtml;
 
 
 
 
-        //db.collection('qaft').doc(sessionStorage.getItem('storeId')).collection('products').orderBy('name').get().then((all) => {
-        //
-        //  for (i = 0; i < all.docs.length; i++) {
-        //    var tmpJs = all.docs[i].data()
-        //    tmpJs.id = all.docs[i].id
-        //    products.push(tmpJs);
-        //  }
-        //
-        //  createPaginationBar(products.length);
-        //  loadProducts(paginationCurrent);
-        //})
+          if (window.sessionStorage.getItem('editDataTemp').length > 0) {
+            editMode = true;
+            products = JSON.parse(window.sessionStorage.getItem('editDataTemp')) //not products!! -> product
+            window.sessionStorage.setItem('editDataTemp', '')
+            document.getElementById('productTitle').value = products['name']
+            document.getElementById('textarea-input').value = products['description']
+            document.getElementById('productTitleOUrl').value = products['originalUrl']
+            document.getElementById('priceTextBoxId').value = products['price']
+            document.getElementById('oldPriceTextBoxId').value = products['old_price']
+            images = products['imageUrls']
+            sizes = products['sizes']
+            available_sizes = products['available_sizes']
 
-        getProductsFromFB(null, 'name', false, false)
+            if (sizes.length > 0) {
+              setAvailableSizeCard();
+            }
+
+
+            setSubCats(products['category'])
+            selectSubCat(products['sub_category'])
+
+            addSizeTag()
+
+            setSlidenImages();
+          }
+
+
+        });
+
+
 
 
       }
 
+      function setSubCats(category) {
+        selected_category = category
+        document.getElementById('dropdownMenuButtonCat').innerHTML = category
+        document.getElementById('dropdownMenuButtonCat').classList.remove('btn-outline-danger')
+        var goInHtml = '';
+        for (i in category_tree[category]) {
+          var template = `<a class="dropdown-item" onclick="selectSubCat('${category_tree[category][i]}')">${category_tree[category][i]}</a>`;
+          goInHtml = goInHtml + template;
+        }
+        document.getElementById('SubCategoryDropdown').innerHTML = goInHtml;
+      }
 
-      function showAndHideEmulator() {
-        if (document.getElementById('mydiv').style.display === "none") {
-          document.getElementById('mydiv').style.top = "160px";
-          document.getElementById('mydiv').style.left = "300px";
-          document.getElementById('mydiv').style.display = "block"
-        } else {
-          document.getElementById('mydiv').style.display = "none"
+      function selectSubCat(subCat) {
+        selected_subCategory = subCat;
+        document.getElementById('dropdownMenuButtonSubCat').innerHTML = subCat
+        document.getElementById('dropdownMenuButtonSubCat').classList.remove('btn-outline-danger')
+      }
+
+
+
+      function addSizeTag() {
+        if (document.getElementById('textbox-addTags').value != '') {
+          sizes.push(document.getElementById('textbox-addTags').value);
+          available_sizes.push(document.getElementById('textbox-addTags').value);
+          var tagElemnts = '';
+          for (i = 0; i < sizes.length; i++) {
+            tagElemnts = tagElemnts + `<a class="badge badge-light">${sizes[i]}</a>`
+          }
+          document.getElementById('sizeList').innerHTML = tagElemnts;
+          document.getElementById('textbox-addTags').value = '';
         }
 
+
+        setAvailableSizeCard();
       }
 
-      function emulatorRefreshButton() {
-        alert('emulatorRefreshButton')
+      function setAvailableSizeCard() {
+
+        var avSzInHtml = '';
+        for (i in sizes) {
+          if (available_sizes.includes(sizes[i])) {
+            var template = `<div class="custom-control custom-checkbox">
+                                            <input type="checkbox" onclick="checkboxCheck('${i}')" class="custom-control-input" id="appliances_${i}" checked>
+                                            <label class="custom-control-label" for="appliances_${i}" id="appliances_sub_${i}">${sizes[i]}</label>
+                                        </div>`;
+          } else {
+            var template = `<div class="custom-control custom-checkbox">
+                                            <input type="checkbox" onclick="checkboxCheck('${i}')" class="custom-control-input" id="appliances_${i}" >
+                                            <label class="custom-control-label" for="appliances_${i}" id="appliances_sub_${i}">${sizes[i]}</label>
+                                        </div>`;
+          }
+
+          avSzInHtml = avSzInHtml + template
+        }
+
+        document.getElementById('available_sizes_selection').innerHTML = avSzInHtml;
+
       }
 
-      function getProductsFromFB(catSubCatKey, orderByKey, isDesc, isSubcat) {
+      function addImage() {
+        if (document.getElementById('imageUrlTextBox').value == '') {
+          return;
+        }
+        images.push(document.getElementById('imageUrlTextBox').value);
+        document.getElementById('imageUrlTextBox').value = ''
+        setSlidenImages();
+      }
+
+      function setSlidenImages() {
+
+        var imgsInHtml = '';
+        var imgsInHtml2 = '';
+
+        for (i in images) {
+
+          if (i == 0) {
+            var template1 = `<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>`;
+            var template2 = `<div class="carousel-item active"><img class="d-block w-100" data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide" alt="First slide [800x400]" width="500" style="height:100%;" src="${images[i]}" data-holder-rendered="true"></div>`;
+          } else {
+            var template1 = `<li data-target="#carouselExampleIndicators" data-slide-to="0" class=""></li>`;
+            var template2 = `<div class="carousel-item"><img class="d-block w-100" data-src="holder.js/800x400?auto=yes&amp;bg=777&amp;fg=555&amp;text=First slide" alt="First slide [800x400]" src="${images[i]}" data-holder-rendered="true"></div>`;
+          }
 
 
-        if (catSubCatKey == null) {
-          if (isDesc) {
-            db.collection('qaft').doc(sessionStorage.getItem('storeId')).collection('products').orderBy(orderByKey, 'desc').get().then((all) => {
 
-              products = []
-              for (i = 0; i < all.docs.length; i++) {
-                var tmpJs = all.docs[i].data()
-                tmpJs.id = all.docs[i].id
-                products.push(tmpJs);
-              }
+          imgsInHtml = imgsInHtml + template1;
+          imgsInHtml2 = imgsInHtml2 + template2;
+        }
 
-              createPaginationBar(products.length);
-              loadProducts(paginationCurrent);
+        document.getElementById('imageSliderId').innerHTML = imgsInHtml
+        document.getElementById('imageSliderId_2').innerHTML = imgsInHtml2
+
+
+      }
+
+      function checkboxCheck(i) {
+
+        if (document.getElementById('appliances_' + i).checked == true) {
+          available_sizes.push(document.getElementById('appliances_sub_' + i).innerHTML)
+        } else if (document.getElementById('appliances_' + i).checked == false) {
+
+          for (j = 0; j < available_sizes.length; j++) {
+            if (sizes[i] === available_sizes[j]) {
+              available_sizes.splice(j, 1)
+            }
+          }
+        }
+      }
+
+      function publish() {
+        document.getElementById('productTitle').classList.remove("is-invalid");
+        document.getElementById('productTitleOUrl').classList.remove("is-invalid");
+        document.getElementById('dropdownMenuButtonCat').classList.remove("btn-outline-danger");
+        document.getElementById('dropdownMenuButtonSubCat').classList.remove("btn-outline-danger");
+        document.getElementById('priceTextBoxId').classList.remove("is-invalid");
+        document.getElementById('oldPriceTextBoxId').classList.remove("is-invalid");
+
+        var error = false
+
+        var p_name = document.getElementById('productTitle').value
+
+        if (p_name == '') {
+          error = true
+          document.getElementById('productTitle').classList.add("is-invalid");
+        }
+
+        var p_description = document.getElementById('textarea-input').value
+
+
+
+        var p_originalUrl = document.getElementById('productTitleOUrl').value
+
+        if (p_originalUrl == '') {
+          error = true
+          document.getElementById('productTitleOUrl').classList.add("is-invalid");
+        }
+
+
+        var p_images = images
+        var p_category = selected_category
+
+        if (p_category == null) {
+          error = true
+          document.getElementById('dropdownMenuButtonCat').classList.add("btn-outline-danger");
+        }
+
+
+
+        var p_subcategory = selected_subCategory
+
+        if (p_subcategory == null) {
+          error = true
+          document.getElementById('dropdownMenuButtonSubCat').classList.add("btn-outline-danger");
+        }
+
+        var p_sizes = sizes
+        var p_availableSizes = available_sizes
+
+
+
+        var p_price = parseFloat(document.getElementById('priceTextBoxId').value)
+
+        if (isNaN(p_price)) {
+          error = true
+          document.getElementById('priceTextBoxId').classList.add("is-invalid");
+        }
+
+
+        var p_oldPrice = parseInt(document.getElementById('oldPriceTextBoxId').value)
+
+        if (isNaN(p_oldPrice)) {
+          p_oldPrice = 0
+        }
+
+
+
+        //console.log('p_name -> ' + p_name + ' -> ' + typeof (p_name))
+        //console.log('p_description -> ' + p_description + ' -> ' + typeof (p_description))
+        //console.log('p_originalUrl -> ' + p_originalUrl + ' -> ' + typeof (p_originalUrl))
+        //console.log('p_images -> ' + p_images + ' -> ' + typeof (p_images))
+        //console.log('p_category -> ' + p_category + ' -> ' + typeof (p_category))
+        //console.log('p_subcategory -> ' + p_subcategory + ' -> ' + typeof (p_subcategory))
+        //console.log('p_sizes -> ' + p_sizes + ' -> ' + typeof (p_sizes))
+        //console.log('p_availableSizes -> ' + p_availableSizes + ' -> ' + typeof (p_availableSizes))
+        //console.log('p_price -> ' + p_price + ' -> ' + typeof (p_price))
+        //console.log('p_oldPrice -> ' + p_oldPrice + ' -> ' + typeof (p_oldPrice))
+
+        if (!error) {
+
+          if (editMode) {
+            db.collection('qaft').doc(sessionStorage.getItem('storeId')).collection('products').doc(products.id).set({
+              available_sizes: p_availableSizes,
+              category: p_category,
+              sub_category: p_subcategory,
+              description: p_description,
+              imageUrls: p_images,
+              name: p_name,
+              old_price: p_oldPrice,
+              price: p_price,
+              sizes: p_sizes,
+              collections: []
+            }).then(() => {
+              window.location.reload(false);
             })
           } else {
-            db.collection('qaft').doc(sessionStorage.getItem('storeId')).collection('products').orderBy(orderByKey).get().then((all) => {
-
-              products = []
-              for (i = 0; i < all.docs.length; i++) {
-                var tmpJs = all.docs[i].data()
-                tmpJs.id = all.docs[i].id
-                products.push(tmpJs);
-              }
-
-              createPaginationBar(products.length);
-              loadProducts(paginationCurrent);
+            db.collection('qaft').doc(sessionStorage.getItem('storeId')).collection('products').doc().set({
+              available_sizes: p_availableSizes,
+              category: p_category,
+              sub_category: p_subcategory,
+              description: p_description,
+              imageUrls: p_images,
+              name: p_name,
+              old_price: p_oldPrice,
+              price: p_price,
+              sizes: p_sizes,
+              collections: []
+            }).then(() => {
+              window.location.reload(false);
             })
           }
-
-        } else {
-
-          if (isDesc) {
-            if (isSubcat) {
-              db.collection('qaft').doc(sessionStorage.getItem('storeId')).collection('products').where('sub_category', "==", catSubCatKey).orderBy(orderByKey, 'desc').get().then((all) => {
-
-                products = []
-                for (i = 0; i < all.docs.length; i++) {
-                  var tmpJs = all.docs[i].data()
-                  tmpJs.id = all.docs[i].id
-                  products.push(tmpJs);
-                }
-
-                createPaginationBar(products.length);
-                loadProducts(paginationCurrent);
-              })
-            } else {
-              db.collection('qaft').doc(sessionStorage.getItem('storeId')).collection('products').where('category', "==", catSubCatKey).orderBy(orderByKey, 'desc').get().then((all) => {
-
-                products = []
-                for (i = 0; i < all.docs.length; i++) {
-                  var tmpJs = all.docs[i].data()
-                  tmpJs.id = all.docs[i].id
-                  products.push(tmpJs);
-                }
-
-                createPaginationBar(products.length);
-                loadProducts(paginationCurrent);
-              })
-            }
-          } else {
-            if (isSubcat) {
-              db.collection('qaft').doc(sessionStorage.getItem('storeId')).collection('products').where('sub_category', "==", catSubCatKey).orderBy(orderByKey).get().then((all) => {
-
-                products = []
-                for (i = 0; i < all.docs.length; i++) {
-                  var tmpJs = all.docs[i].data()
-                  tmpJs.id = all.docs[i].id
-                  products.push(tmpJs);
-                }
-
-                createPaginationBar(products.length);
-                loadProducts(paginationCurrent);
-              })
-            } else {
-              db.collection('qaft').doc(sessionStorage.getItem('storeId')).collection('products').where('category', "==", catSubCatKey).orderBy(orderByKey).get().then((all) => {
-
-                products = []
-                for (i = 0; i < all.docs.length; i++) {
-                  var tmpJs = all.docs[i].data()
-                  tmpJs.id = all.docs[i].id
-                  products.push(tmpJs);
-                }
-
-                createPaginationBar(products.length);
-                loadProducts(paginationCurrent);
-              })
-            }
-          }
         }
-      }
-
-      function isDescendingSetter(isDscndng, s1, s2) {
-        document.getElementById(s1).innerHTML = s2
-        isDescending = isDscndng
-      }
-
-
-      function createCatDropdown() {
-        //catDropdown
-
-        var inHtmlStr = `<a class="dropdown-item" onclick="getProductsFromFB(null,'name',${isDescending},false);document.getElementById('dropdownMenuButton').innerHTML='All'">All</a>`;
-
-        Object.keys(category_tree).forEach((a) => {
-          inHtmlStr = inHtmlStr + `<a class="dropdown-item" onclick="getProductsFromFB('${a}','name',${isDescending},false);createSubCatDropdown('${a}');document.getElementById('dropdownMenuButton').innerHTML='${a}'">${a}</a>`
-        })
-
-        document.getElementById('catDropdown').innerHTML = inHtmlStr
-
-
-      }
-
-      function createSubCatDropdown(cat) {
-        var inHtmlStr = '';
-
-        category_tree[cat].forEach((a) => {
-          inHtmlStr = inHtmlStr + `<a class="dropdown-item" onclick="getProductsFromFB('${a}','name',${isDescending},true);document.getElementById('dropdownMenuButtonSubCat').innerHTML='${a}'">${a}</a>`
-        })
-        document.getElementById('subCatDropdown').innerHTML = inHtmlStr
-
-
-      }
-
-
-
-
-      function createPaginationBar(lngth) {
-
-        var allPaginationBar = `<li class="page-item disabled">
-                                <span class="page-link">Previous</span>
-                              </li>`;
-        for (i = 1; i <= lngth / onePageItemCount + 1; i++) {
-          allPaginationBar = allPaginationBar + `<li class="page-item"><a class="page-link" href="#" onclick="loadProducts(${i})">${i}</a></li>`
-        }
-        allPaginationBar = allPaginationBar + `
-                              <li class="page-item">
-                                <a class="page-link" href="#">Next</a>
-                              </li>`;
-        document.getElementById('paginationBar').innerHTML = allPaginationBar;
-      }
-
-      function loadProducts(page) {
-
-        elmntlst = document.getElementById('elementsListID')
-
-        var all_items = '';
-
-        for (i = page * onePageItemCount - onePageItemCount; i < page * onePageItemCount; i++) {
-          if (i >= products.length) {
-            break;
-          }
-          name = products[i].name
-          img = products[i].imageUrls[0];
-          price = products[i].price
-          category = products[i].category
-          subcategory = products[i].sub_category;
-          old_price = products[i].old_price;
-          if (old_price === 0) {
-            old_price = '';
-          } else {
-            old_price = '$' + old_price;
-          }
-          sizesTmp = products[i].sizes;
-          available_sizes = products[i].available_sizes;
-          var sizes = [];
-          if (sizesTmp.length != 1) {
-            sizesTmp.forEach(element => {
-              if (available_sizes.includes(element)) {
-                sizes.push('<span class="badge badge-secondary-inverse" style="color:Black;background-color:#EBEDEF">' + element + '</span>')
-              } else {
-                sizes.push('<span class="badge badge-secondary-inverse" style="color:DarkGrey">' + element + '</span>')
-              }
-            });
-          }
-
-          var item = `<tr>
-          <th scope="row"><input class="form-check-input" type="checkbox" value="" onclick="checkboxChecked('${products[i].id}','flexCheckChecked_${i}')" id="flexCheckChecked_${i}" style="margin-left:0;margin-top:15px"></th>
-          <td><img src="${img}" class="img-fluid" width="35" alt="product"></td>
-          <td>${name}</td>
-          <td>$${price} <strike>${old_price}</strike></td>
-          <td>${category}</td>
-          <td>${subcategory}</td>
-          <td>${sizes}</td>
-          <td>
-              <div class="button-list">
-                <button class="btn btn-outline-success " onclick="editButton('${i}')" type="button"><i class="fa fa-pencil-square-o"></i></button>  
-              </div>
-          </td>
-        </tr>`;
-
-          all_items = all_items + item;
-
-        }
-        elmntlst.innerHTML = all_items;
-
-      }
-
-      function changePaginationCount(cnt) {
-
-        paginationCurrent = 1;
-        onePageItemCount = cnt;
-
-        createPaginationBar(products.length);
-
-        loadProducts(paginationCurrent);
-
-        document.getElementById('dropdownMenuButtonPagination').innerHTML = cnt;
-
-      }
-
-      function checkboxChecked(productId, checkBoxID) {
-        //console.log(document.getElementById(checkBoxID).checked)
-
-        if (document.getElementById(checkBoxID).checked) {
-          onDeleteProductIDs.push(productId)
-        } else if (!document.getElementById(checkBoxID).checked) {
-          for (i in onDeleteProductIDs) {
-            if (onDeleteProductIDs[i] == productId) {
-              onDeleteProductIDs.splice(i, 1)
-            }
-          }
-        }
-      }
-
-      function deleteSelectedProducts() {
-        for (i in onDeleteProductIDs) {
-          db.collection('qaft').doc(sessionStorage.getItem('storeId')).collection('products').doc(onDeleteProductIDs[i]).delete()
-
-          for (j in products) {
-            if (products[j].id === onDeleteProductIDs[i]) {
-              products.splice(j, 1)
-            }
-          }
-        }
-
-        createPaginationBar(products.length);
-        loadProducts(paginationCurrent);
       }
 
       function logout() {
@@ -757,63 +767,7 @@
         });
 
       }
-
-      function saveToCollections() {
-
-        var addToThisCollections = []
-        var addToThisBestSelling = []
-
-        if (document.getElementById('bestSelling_checkbox').checked) {
-          db.collection('qaft').doc(sessionStorage.getItem('storeId')).collection('common').doc('home_screen').get().then((k) => {
-            addToThisBestSelling = k.data().bestSellers
-            onDeleteProductIDs.forEach((prid) => {
-
-              addToThisBestSelling.push(db.collection('qaft').doc(sessionStorage.getItem('storeId')).collection('products').doc(prid))
-            })
-            db.collection('qaft').doc(sessionStorage.getItem('storeId')).collection('common').doc('home_screen').set({
-              bestSellers: addToThisBestSelling
-            }, {
-              merge: true
-            })
-          });
-        }
-
-        collections.forEach((a) => {
-          if (document.getElementById('checkbox_' + a).checked) {
-            addToThisCollections.push(a)
-          }
-        })
-
-
-        addToThisCollections.forEach((cllctn) => {
-
-          var addThisReferences = []
-
-          onDeleteProductIDs.forEach((prid) => {
-            addThisReferences.push(db.collection('qaft').doc(sessionStorage.getItem('storeId')).collection('products').doc(prid))
-          })
-
-
-          db.collection('qaft').doc(sessionStorage.getItem('storeId')).collection('collections').doc(cllctn).set({
-            products: addThisReferences
-          }, {
-            merge: true
-          }).then((catTree) => {
-            console.log(catTree);
-          });
-        })
-
-        pageOnCreate() ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-      }
-
-      function editButton(data) {
-        window.sessionStorage.setItem('editDataTemp', JSON.stringify(products[data]))
-        console.log(JSON.parse(window.sessionStorage.getItem('editDataTemp')))
-        window.location.replace('product.html')
-      }
     </script>
-
     <script>
       //Make the DIV element draggagle:
       dragElement(document.getElementById("mydiv"));
@@ -1008,7 +962,6 @@
         }
       }
     </script>
-
 
 
   </body>
